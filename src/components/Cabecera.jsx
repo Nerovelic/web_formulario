@@ -3,9 +3,11 @@ import React from 'react'
 
 const Cabecera = ({titulo}) => {
   return (
-    <div className='cabeza'>
-      <h1>{titulo}</h1>
-      </div>
+    <>
+      <h1 className='font-black uppercase text-4xl text-center mt-4 text-black'>
+        Administrador de <span className='text-black'>Estudiante</span>
+      </h1>
+    </>
   )
 }
 
