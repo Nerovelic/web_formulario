@@ -6,6 +6,8 @@ import Listados from "./components/Listados"
 
 function App() {
   const [estudiantes, setEstudiantes] = useState([]);
+
+  const [estudiante, setEstudiante] = useState({});
   return (
     <>
     <div className="container mx-auto">
@@ -14,8 +16,12 @@ function App() {
         <Formulario
           estudiantes={estudiantes}
           setEstudiantes = {setEstudiantes}
+          estudiante = {estudiante}
         />
-        <Listados/>
+        <Listados
+          estudiantes={estudiantes}
+          setEstudiante={setEstudiante}
+        />
       </div>
     </div>
     </>
