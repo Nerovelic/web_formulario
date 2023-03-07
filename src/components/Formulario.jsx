@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 
-const Formulario = ({estudiantes,setEstudiantes}) => {
+const Formulario = ({estudiantes,setEstudiantes,estudiante}) => {
 
   const [nombre,setNombre] = useState('');
   const [carrera,setCarrera] = useState('');
@@ -10,7 +10,7 @@ const Formulario = ({estudiantes,setEstudiantes}) => {
   const [promedio,setPromedio] = useState('');
 
   const [error, setError] = useState(false)
-  
+
   const manejadorSubmit = (e) => {
     e.preventDefault();
     if([nombre.trim(),carrera.trim(),semestre.trim(),promedio.trim()].includes('')){
