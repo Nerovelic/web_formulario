@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Cabecera from "./components/Cabecera"
 import Formulario from "./components/Formulario"
 import Listados from "./components/Listados"
@@ -8,6 +8,12 @@ function App() {
   const [estudiantes, setEstudiantes] = useState([]);
 
   const [estudiante, setEstudiante] = useState({});
+
+  const eliminarEstudiante = (id) => {
+    const estudiantesActualizados = estudiantes.filter(estudiante => estudiante.id !== id);
+    setEstudiantes(estudiantesActualizados);
+  }
+
   return (
     <>
     <div className="container mx-auto">
@@ -17,10 +23,12 @@ function App() {
           estudiantes={estudiantes}
           setEstudiantes = {setEstudiantes}
           estudiante = {estudiante}
+          setEstudiante={setEstudiante}
         />
         <Listados
           estudiantes={estudiantes}
           setEstudiante={setEstudiante}
+          eliminarEstudiante={eliminarEstudiante}
         />
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-  const Estudiantes = ({estudiante,setEstudiante}) => {
+  const Estudiantes = ({estudiante,setEstudiante,eliminarEstudiante}) => {
   const {nombre,carrera,semestre,promedio} = estudiante;
   return (
     <div className='mb-3 py-3 px-3 pb-3 rounded-md shadow-lg  bg-[#023047] font-bold'>
@@ -13,6 +13,7 @@ import React from 'react'
             type='buttom' 
             className='p-2 bg-gradient-to-r  from-[#fb0800] rounded-md' 
             value='Eliminar'
+            onClick={() => eliminarEstudiante(estudiante.id)}
             >Eliminar</button>
           <button 
             type='buttom' 

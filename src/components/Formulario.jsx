@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 
-const Formulario = ({estudiantes,setEstudiantes,estudiante}) => {
+const Formulario = ({estudiantes,setEstudiantes,estudiante,setEstudiante}) => {
 
   const [nombre,setNombre] = useState('');
   const [carrera,setCarrera] = useState('');
@@ -39,7 +39,7 @@ const Formulario = ({estudiantes,setEstudiantes,estudiante}) => {
       carrera,
       semestre,
       promedio
-   }
+    }
     if (estudiante.id) {
       limpiar();
       objetoEstudiante.id = estudiante.id;
@@ -49,8 +49,10 @@ const Formulario = ({estudiantes,setEstudiantes,estudiante}) => {
       objetoEstudiante.id = generarID();
       setEstudiantes([...estudiantes,objetoEstudiante])
     }
+    limpiar();
+    setEstudiante({});
   }
-
+  
   const limpiar = () => {
     setNombre('');
     setCarrera('');
